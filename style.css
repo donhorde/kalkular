@@ -1,0 +1,71 @@
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Outfit', Helvetica, Arial, sans-serif;
+    text-align: center;
+    margin: 0;
+    background-color: hsl(212, 45%, 89%);
+}
+h1 {
+    font-weight: 700;
+    font-size: 1.3em;
+}
+p {
+    font-size: 0.9em;
+    font-weight: 400;
+    color: hsl(220, 15%, 55%);
+}
+button {
+    background-color: white;
+    border-radius: 15px;
+    border-style: none;
+}
+
+button:hover {
+    box-shadow: 0px 2px 2px 0px hsl(212, 45%, 80%);
+}
+
+.main-box {
+    background-color: whitesmoke;
+    width: 300px;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0px 5px 20px 0px hsl(212, 45%, 80%);
+}
+.main-box__qr {
+    background-color: white;
+    width: 100%;
+    border-radius: 10px;
+    border: solid black 0.5px;
+}
+.keys {
+    padding: 15px 0px;
+    display: grid;
+    grid-template-columns: repeat(4, 67.5px [col-start]);
+    grid-template-rows: repeat(5, 60px [col-start]);
+    column-gap: 10px;
+    row-gap: 10px;
+}
+
+#bt_equals {
+    grid-column: span 2;
+}
+
+.attribution {
+    position: absolute;
+    bottom: 5px; 
+    right: 5px;
+    font-size: 11px;
+}
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+#display {
+    text-align: right;
+    font-size: 2em;
+    padding: 10px 15px;
+    margin: 0px;
+    max-width: 270px;
+}
