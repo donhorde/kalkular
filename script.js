@@ -12,7 +12,7 @@ const negateButton = document.getElementById("bt_negate");
 const deleteButton = document.getElementById("bt_del");
 const floatButton = document.getElementById("bt_float");
 
-const oneButton = document.getElementById("bt_1");
+/* const oneButton = document.getElementById("bt_1");
 const twoButton = document.getElementById("bt_2");
 const threeButton = document.getElementById("bt_3");
 const fourButton = document.getElementById("bt_4");
@@ -21,7 +21,9 @@ const sixButton = document.getElementById("bt_6");
 const sevenButton = document.getElementById("bt_7");
 const eightButton = document.getElementById("bt_8");
 const nineButton = document.getElementById("bt_9");
-const zeroButton = document.getElementById("bt_0");
+const zeroButton = document.getElementById("bt_0"); */
+
+const numberButton = document.querySelectorAll(".num");
 
 let operand1 = 0;
 let operand2 = 0;
@@ -175,7 +177,7 @@ minusButton.addEventListener("click", () => minus());
 multiplyButton.addEventListener("click", () => multiply());
 divideButton.addEventListener("click", () => divide());
 
-oneButton.addEventListener("click", () => addNum(1));
+/* oneButton.addEventListener("click", () => addNum(1));
 twoButton.addEventListener("click", () => addNum(2));
 threeButton.addEventListener("click", () => addNum(3));
 fourButton.addEventListener("click", () => addNum(4));
@@ -184,7 +186,10 @@ sixButton.addEventListener("click", () => addNum(6));
 sevenButton.addEventListener("click", () => addNum(7));
 eightButton.addEventListener("click", () => addNum(8));
 nineButton.addEventListener("click", () => addNum(9));
-zeroButton.addEventListener("click", () => addNum(0));
+zeroButton.addEventListener("click", () => addNum(0)); */
+
+numberButton.forEach(button => button.addEventListener("click", () => addNum(button.getAttribute("numValue"))));
+
 
 document.addEventListener("keydown", function(event) {
         if (event.keyCode === 13 && document.activeElement !== equalsButton) {
