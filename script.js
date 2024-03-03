@@ -1,5 +1,5 @@
-let success = "Loaded successfully"
-console.log(success);
+/* let success = "Loaded successfully"
+console.log(success); */
 
 const equalsButton = document.getElementById("bt_equals");
 const plusButton = document.getElementById("bt_plus");
@@ -188,7 +188,7 @@ eightButton.addEventListener("click", () => addNum(8));
 nineButton.addEventListener("click", () => addNum(9));
 zeroButton.addEventListener("click", () => addNum(0)); */
 
-numberButton.forEach(button => button.addEventListener("click", () => addNum(button.getAttribute("numValue"))));
+numberButton.forEach(button => button.addEventListener("click", () => addNum(button.dataset.number)));
 
 
 document.addEventListener("keydown", function(event) {
