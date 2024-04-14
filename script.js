@@ -1,6 +1,3 @@
-/* let success = "Loaded successfully"
-console.log(success); */
-
 const equalsButton = document.getElementById("bt_equals");
 const plusButton = document.getElementById("bt_plus");
 const minusButton = document.getElementById("bt_minus");
@@ -11,17 +8,6 @@ const clearButton = document.getElementById("bt_clear");
 const negateButton = document.getElementById("bt_negate");
 const deleteButton = document.getElementById("bt_del");
 const floatButton = document.getElementById("bt_float");
-
-/* const oneButton = document.getElementById("bt_1");
-const twoButton = document.getElementById("bt_2");
-const threeButton = document.getElementById("bt_3");
-const fourButton = document.getElementById("bt_4");
-const fiveButton = document.getElementById("bt_5");
-const sixButton = document.getElementById("bt_6");
-const sevenButton = document.getElementById("bt_7");
-const eightButton = document.getElementById("bt_8");
-const nineButton = document.getElementById("bt_9");
-const zeroButton = document.getElementById("bt_0"); */
 
 const numberButton = document.querySelectorAll(".num");
 
@@ -37,14 +23,7 @@ let displayState = 0;
 const display = document.getElementById("display");
 display.innerHTML = displayState;
 
-// redundant, only called once
-/* const clearDisplay = () => {
-    displayState = 0;
-    numsPushed = [];
-    display.innerHTML = displayState;
-} */
-
-const addNum = x => {
+function addNum(x) {
     if (resolved) {
         reset();
     }
@@ -53,7 +32,7 @@ const addNum = x => {
     display.innerHTML = displayState;
 }
 
-function compute(){
+function compute() {
     operand2 = displayState;
 
     switch (operation) {
@@ -90,7 +69,7 @@ function compute(){
     resolved = true;
 }
 
-const nextOperation = () => {
+function nextOperation() {
     if (resolved) {
         operand1 = result;
     } else {
@@ -120,7 +99,7 @@ const divide = () => {
     operation = "division";
 }
 
-const reset = () => {
+function reset() {
     displayState = 0;
     numsPushed = [];
     operand1 = 0;
@@ -132,8 +111,6 @@ const reset = () => {
 }
 
 const negateValue = () => {
-    /* console.log(`resolved: ${resolved}, result = ${result}, displayState = ${displayState}`); */
-
     if (resolved) {
         result *= -1;
         displayState = result;
@@ -177,19 +154,7 @@ minusButton.addEventListener("click", () => minus());
 multiplyButton.addEventListener("click", () => multiply());
 divideButton.addEventListener("click", () => divide());
 
-/* oneButton.addEventListener("click", () => addNum(1));
-twoButton.addEventListener("click", () => addNum(2));
-threeButton.addEventListener("click", () => addNum(3));
-fourButton.addEventListener("click", () => addNum(4));
-fiveButton.addEventListener("click", () => addNum(5));
-sixButton.addEventListener("click", () => addNum(6));
-sevenButton.addEventListener("click", () => addNum(7));
-eightButton.addEventListener("click", () => addNum(8));
-nineButton.addEventListener("click", () => addNum(9));
-zeroButton.addEventListener("click", () => addNum(0)); */
-
 numberButton.forEach(button => button.addEventListener("click", () => addNum(button.dataset.number)));
-
 
 document.addEventListener("keydown", function(event) {
         if (event.keyCode === 13 && document.activeElement !== equalsButton) {
