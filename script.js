@@ -11,6 +11,18 @@ const floatButton = document.getElementById("bt_float");
 
 const numberButton = document.querySelectorAll(".num");
 
+//TBD: refactor global vars to obj props
+/* const states {
+    operand1: 0,
+    operand2: 0,
+    operation: "",
+    resolved: false,
+    result: 0,
+    
+    numsPushed: [],
+    displayState: 0,
+} */
+
 let operand1 = 0;
 let operand2 = 0;
 let operation = "";
@@ -28,8 +40,8 @@ function addNum(x) {
         reset();
     }
     numsPushed.push(x);
+    display.innerHTML = numsPushed.join("");
     displayState = Number(numsPushed.join(""));
-    display.innerHTML = displayState;
 }
 
 function compute() {
@@ -62,6 +74,7 @@ function compute() {
 
         default:
             console.log("no operation defined");
+            result = displayState;
     }
 
     operand1 = result;
