@@ -65,8 +65,8 @@ function compute() {
             if (operand2 == 0) {
                 console.log("division by zero")
                 reset();
-                /* displayState = "Error!";
-                display.innerHTML = displayState; */
+                
+                display.innerHTML = "Error!";
             } else {
                 result = operand1 / operand2;
             }
@@ -77,9 +77,11 @@ function compute() {
             result = displayState;
     }
 
-    operand1 = result;
-    display.innerHTML = result;
-    resolved = true;
+    if (display.innerHTML !== "Error!") {
+        operand1 = result;
+        display.innerHTML = result;
+        resolved = true;
+    }
 }
 
 function nextOperation() {
