@@ -46,6 +46,7 @@ function addNum(x) {
 
 function compute() {
     operand2 = displayState;
+    numsPushed = [];
 
     switch (operation) {
 
@@ -83,6 +84,9 @@ function compute() {
 }
 
 function nextOperation() {
+    if (numsPushed.length !== 0 && numsPushed[0] !== "."){
+        compute();
+    }
     if (resolved) {
         operand1 = result;
     } else {
