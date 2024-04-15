@@ -63,9 +63,7 @@ function compute() {
 
         case "division":
             if (operand2 == 0) {
-                console.log("division by zero")
                 reset();
-                
                 display.innerHTML = "Error!";
             } else {
                 result = operand1 / operand2;
@@ -125,11 +123,13 @@ function reset() {
     display.innerHTML = displayState;
 }
 
-const negateValue = () => {
+function negateValue() {
     if (resolved) {
         result *= -1;
         displayState = result;
+        operand1 = result;
         display.innerHTML = displayState;
+        displayState = operand2;
     } else {
         displayState *= -1;
         numsPushed[0] *= -1;
