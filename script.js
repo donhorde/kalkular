@@ -11,18 +11,6 @@ const floatButton = document.getElementById("bt_float");
 
 const numberButton = document.querySelectorAll(".num");
 
-//TBD: refactor global vars to obj props
-/* const states {
-    operand1: 0,
-    operand2: 0,
-    operation: "",
-    resolved: false,
-    result: 0,
-    
-    numsPushed: [],
-    displayState: 0,
-} */
-
 let operand1 = 0;
 let operand2 = 0;
 let operation = "";
